@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebTh1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminUser">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="char" MaxLength="24" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="CTHoaDon">
+    <Key>
+      <PropertyRef Name="IdInVoice" />
+      <PropertyRef Name="IdPro" />
+    </Key>
+    <Property Name="IdInVoice" Type="int" Nullable="false" />
+    <Property Name="IdPro" Type="int" Nullable="false" />
+    <Property Name="ItemQty" Type="int" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="IdInvoice" />
+    </Key>
+    <Property Name="IdInvoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="char" MaxLength="24" />
+    <Property Name="DateInvoice" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LoaiSanPham">
+    <Key>
+      <PropertyRef Name="IdCate" />
+    </Key>
+    <Property Name="IdCate" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameCate" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="IdPro" />
+    </Key>
+    <Property Name="IdPro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamePro" Type="nvarchar" MaxLength="40" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Price" Type="float" />
+    <Property Name="Descriptions" Type="varchar" MaxLength="255" />
+    <Property Name="ImagePath" Type="varchar" MaxLength="255" />
+    <Property Name="IdCate" Type="smallint" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="char" MaxLength="24" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="64" />
+    <Property Name="FName" Type="nvarchar" MaxLength="35" />
+    <Property Name="LName" Type="nvarchar" MaxLength="15" />
+    <Property Name="DoB" Type="date" />
+    <Property Name="Phone" Type="char" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="smallint" />
+  </EntityType>
+  <Association Name="FK__CTHoaDon__IdInVo__4316F928">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="CTHoaDon" Type="Self.CTHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="IdInvoice" />
+      </Principal>
+      <Dependent Role="CTHoaDon">
+        <PropertyRef Name="IdInVoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTHoaDon__IdPro__440B1D61">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="CTHoaDon" Type="Self.CTHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="IdPro" />
+      </Principal>
+      <Dependent Role="CTHoaDon">
+        <PropertyRef Name="IdPro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDon__UserName__403A8C7D">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham__IdCate__3D5E1FD2">
+    <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="0..1" />
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiSanPham">
+        <PropertyRef Name="IdCate" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="IdCate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebTh1ModelStoreContainer">
+    <EntitySet Name="AdminUser" EntityType="Self.AdminUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTHoaDon" EntityType="Self.CTHoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiSanPham" EntityType="Self.LoaiSanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CTHoaDon__IdInVo__4316F928" Association="Self.FK__CTHoaDon__IdInVo__4316F928">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="CTHoaDon" EntitySet="CTHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTHoaDon__IdPro__440B1D61" Association="Self.FK__CTHoaDon__IdPro__440B1D61">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="CTHoaDon" EntitySet="CTHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDon__UserName__403A8C7D" Association="Self.FK__HoaDon__UserName__403A8C7D">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham__IdCate__3D5E1FD2" Association="Self.FK__SanPham__IdCate__3D5E1FD2">
+      <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

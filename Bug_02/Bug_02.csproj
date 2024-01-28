@@ -130,6 +130,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoaiSanPhamsController.cs" />
+    <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -261,6 +263,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Create.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Delete.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Details.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Edit.cshtml" />
+    <Content Include="Views\LoaiSanPhams\Index.cshtml" />
+    <Content Include="Views\SanPhams\Create.cshtml" />
+    <Content Include="Views\SanPhams\Delete.cshtml" />
+    <Content Include="Views\SanPhams\Details.cshtml" />
+    <Content Include="Views\SanPhams\Edit.cshtml" />
+    <Content Include="Views\SanPhams\Index.cshtml" />
+    <Content Include="Views\SanPhams\DetailPro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

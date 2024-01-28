@@ -1,0 +1,58 @@
+﻿@model WEB_gearvn.Models.SanPham
+
+@{
+    ViewBag.Title = "DetailPro";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/Detail.css" />
+    <script src="https://kit.fontawesome.com/3e21e075ef.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        background-color: rgb(236,236,236);
+    }
+
+    .Mainimage {
+        width: 400px;
+        height: max-content;
+    }
+    .gift p{
+        font-weight:bold;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div>
+                <a href="#" class="text-decoration-none"> <i class="fa-solid fa-house"></i> <span>Trang chủ /</span></a>
+                <a href="#" class="text-decoration-none"><span>@Html.DisplayFor(model => model.LoaiSanPham.NameCate) / </span></a>
+                <a href="#" class="text-decoration-none"><span>@Html.DisplayFor(model => model.NamePro)  </span></a>
+            </div>
+            <div class="col-12 d-flex">
+                <div class="col-4" style="background-color:black">
+                    <img class="Mainimage" src="https://product.hstatic.net/200000722513/product/eva2_d8247a41c512485f8a1fc40c8c382230_grande.png" />
+                    @*<img src="@Url.Content(Model.ImagePath)"/>*@
+                </div>
+                <div class="col-8 container" style="background-color:pink;border-radius:10px;padding-left:30px; border-left:1px solid grey">
+                    <h3>@Html.DisplayFor(model => model.NamePro)</h3>
+                    <h3 style="color: rgb(227,0,25);">@string.Format("{0:N0}", Model.Price)</h3>
+                    <div class="col-12" style="border: 1px solid rgb(255,217,217); border-radius: 10px; ">
+                        <div style="width: auto; padding: 10px; border-top-left-radius: 10px;border-top-right-radius:10px; font-size: 20px; font-weight: bold; background-color: rgb(255,217,217)">
+                            <i class="fa-solid fa-gift" style="color: #ff0000;"></i> <span>Quà tặng khuyến mãi</span>
+                        </div>
+                        <div class="gift p-3">
+                            <p>1. Tặng ...</p>
+                            <p>2. Tặng ...</p>
+                            <p>3. Tặng ...</p>
+                            <p>4. Tặng ...</p>
+                        </div>
+                    </div>
+                    <button style="background-color: rgb(227,0,25);margin-top:10px; color:white;border:none;border-radius:10px;font-size:30px;font-weight:bold;padding:5px 10px">Mua ngay<p style="font-size:15px;font-weight:400">Giao hàng tận nơi hoặc nhận tại cửa hàng</p></button>
+                    <p style="color: rgb(227,0,25);">Ưu đãi khi mua kèm PC</p>
+                    <p style="color: rgb(66,139,202); font-weight: bold"><i class="fa-solid fa-star" style="color: #FFD43B;font-size:20px"></i>Ưu đãi lên đến 54% khi mua kèm PC <a href="#" class="text-decoration-none" style="font-weight: 200; color: rgb(66,139,202)">xem ngay tại đây</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
