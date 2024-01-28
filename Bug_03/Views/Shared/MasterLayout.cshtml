@@ -11,6 +11,7 @@
             background-color: #f5f5f5;
         }
     </style>
+    <script src="https://kit.fontawesome.com/3e21e075ef.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
@@ -18,20 +19,100 @@
         <img src="https://file.hstatic.net/200000722513/file/banner_topbar_-_b1400ceae_bv3186w_84faf438decf4ff3ac4d29f3a5e3b069.png" alt="Laptop Asus ExpertBook B1400CEAE BV3186W" class="img-fluid" style="width: 79%" />
     </div>
     <div class="container-fluid" style="background-color: #e30019; display: flex">
-        <div class="container">
-            <div class="row">
-                <div class="col-7">
-                    <div class="col-3">
-                        <img src="https://file.hstatic.net/200000636033/file/logo_fd11946b31524fbe98765f34f3de0628.svg" alt="GEARVN.COM" class="img-fluid" />
+        <div class="container col-10">
+            <div class="row p-1" style="color: #fff">
+                <div class="col-2">
+                    <img src="https://file.hstatic.net/200000636033/file/logo_fd11946b31524fbe98765f34f3de0628.svg"
+                         alt="GEARVN.COM" class="img-fluid m-3" />
+                </div>
+                <div class="col-1 py-2 text-center" style="margin-top: auto; margin-bottom: auto; background-color: #be1529; border-radius: 5px; font-weight: 700; font-size: 0.8rem">
+                    <i class="fa-solid fa-bars" style="font-size: 1rem"></i>
+                    Danh mục
+                </div>
+                <div class="col-4" style="margin-top: auto; margin-bottom: auto;">
+                    <div style="background-color: #fff; border-radius: 5px; position: relative">
+                        <input class="form-control" type="text" placeholder="Bạn cần tìm gì?" aria-label="default input example">
+                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 2%; top: 35%; color: #808080; font-size: 0.9rem"></i>
                     </div>
                 </div>
-                <div class="col-5">
-
+                <div class="col-1 p-2" style="font-weight: 700; display: flex; font-size: 0.8rem; align-items: center;">
+                    <i class="fa-solid fa-headphones-simple col" style="font-size: 1.2rem"></i>
+                    <p class="col" style="margin: 0; padding: 0; line-height: 0.9rem">Hotline<br />1800.6975</p>
+                </div>
+                <div class="col-1 p-2" style="font-weight: 700; display: flex; font-size: 0.8rem; align-items: center;">
+                    <i class="fa-solid fa-location-dot col" style="font-size: 1.2rem"></i>
+                    <p class="col" style="margin: 0; padding: 0; line-height: 0.9rem">Hệ thống<br />Showroom</p>
+                </div>
+                <div class="col-1 p-2" style="font-weight: 700; display: flex; font-size: 0.8rem; align-items: center;">
+                    <i class="fa-solid fa-file-circle-check col" style="font-size: 1.2rem"></i>
+                    <p class="col" style="margin: 0; padding: 0; line-height: 0.9rem">Tra cứu<br />đơn_hàng</p>
+                </div>
+                <div class="col-1 px-4" style="font-weight: 700; display: flex; font-size: 0.8rem; align-items: center;">
+                    <i class="fa-solid fa-cart-shopping col" style="font-size: 1.2rem"></i>
+                    <p class="col" style="margin: 0; padding: 0; line-height: 0.9rem">Giỏ<br />Hàng</p>
+                </div>
+                <div class="col-1 px-4 my-3" style="font-weight: 700; display: flex; font-size: 0.8rem; align-items: center; background-color: #be1529; border-radius: 5px">
+                    <i class="fa-regular fa-user col" style="font-size: 1.2rem"></i>
+                    <p class="col" style="margin: 0; padding: 0; line-height: 0.9rem">Đăng<br />nhập</p>
                 </div>
             </div>
         </div>
     </div>
-    @RenderBody()
+
+    <div class="container-fluid" style="display: flex; justify-content: center">
+        <div class="container col-10 row p-1">
+            <div class="col-2 text-center">
+                <p style="border-right: 1px solid #808080; font-weight: 600; font-size: 0.9rem">
+                    <i class="fa-solid fa-tags"></i>
+                    Săn Voucher GEARVN
+                </p>
+            </div>
+            <div class="col-2 text-center">
+                <p style="border-right: 1px solid #808080; font-weight: 600; font-size: 0.9rem">
+                    <i class="fa-regular fa-newspaper"></i>
+                    Tin công nghệ
+                </p>
+            </div>
+            <div class="col-2 text-center">
+                <p style="border-right: 1px solid #808080; font-weight: 600; font-size: 0.9rem">
+                    <i class="fa-brands fa-youtube"></i>
+                    Video
+                </p>
+            </div>
+            <div class="col-2 text-center">
+                <p style="border-right: 1px solid #808080; font-weight: 600; font-size: 0.9rem">
+                    <i class="fa-regular fa-credit-card"></i>
+                    Hướng dẫn thanh toán
+                </p>
+            </div>
+            <div class="col-2 text-center">
+                <p style="border-right: 1px solid #808080; font-weight: 600; font-size: 0.9rem">
+                    <i class="fa-solid fa-coins"></i>
+                    Hướng dẫn trả góp
+                </p>
+            </div>
+            <div class="col-2 text-center">
+                <p style="font-weight: 600; font-size: 0.9rem">
+                    <i class="fa-solid fa-shield"></i>
+                    Chính sách bảo hành
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container row">
+        <div class="col-1">
+            <img src="https://file.hstatic.net/200000722513/file/pc_msi_sticky_a6b4ebd0a3274efd87160e29874112d8.png"
+                 alt="PC MSI" class="img-fluid" />
+        </div>
+        <div class="col-10" style="border: 1px solid">
+            @RenderBody()
+        </div>
+        <div class="col-1">
+            <img src="https://file.hstatic.net/200000722513/file/banner_sticky_-_b1400ceae_bv3186w_52b7a4750b8d4cd99ee990c07792d852.png"
+                 alt="Laptop Asus ExpertBook B1400CEAE BV3186W" class="img-fluid" />
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
