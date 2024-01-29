@@ -1,0 +1,56 @@
+create database WebTh1
+use WebTh1
+go
+create table [dbo].[AdminUser]
+(
+	[UserName] char(24) primary key,
+	[Password] Varchar(64)
+)
+create table[dbo].[Users]
+(
+	[UserName] char(24) primary key,
+	[Password] varchar(64),
+	[FName] nvarchar(35),
+	[LName] nvarchar(15),
+	[DoB] Date,
+	[Phone] char(10),
+	[Address] nvarchar(100),
+	[Email] varchar(50),
+	[Gender] SMALLINT
+
+)
+
+create table [dbo].[SanPham]
+(
+[IdPro] int identity(1,1) primary key,
+[NamePro] NVarchar(40),
+[Qty] int,
+[Price] Decimal(10,8),
+[Descriptions] varchar(255),
+[ImagePath] varchar(255),
+[IdCate] smallint
+)
+
+Create table [dbo].[HoaDon]
+(
+[IdInvoice] int identity (1,1) primary key,
+[UserName] Char(24),
+[DateInvoice] Datetime
+)
+
+Create table [dbo].[LoaiSanPham]
+(
+[IdCate] int identity (1,1) primary key,
+[NameCate] Nvarchar(25)
+)
+
+
+Create table [dbo].[CTHoaDon]
+([IdInVoice] int ,
+[IdPro] int ,
+Primary Key([IdInVoice],[IdPro])
+[ItemQty] int,
+CONSTRAINT [FK_Pro_CTHoaDon] Foreign Key ([IdInVoice]) references [dbo].[HoaDon] ([IdInvoice]),
+CONSTRAINT [FK_Pro_CTHoaDon_2] Foreign Key ([IdPro]) references [dbo].[SanPham] ([IdPro])
+
+)
